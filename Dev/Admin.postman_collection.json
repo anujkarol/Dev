@@ -1,0 +1,132 @@
+{
+	"info": {
+		"_postman_id": "26418ce7-89d8-4bf8-be51-7757ddd9fb8b",
+		"name": "Admin",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Register",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\"teacher\": \"teacherken@gmail.com\",\n\"students\":[\n\t\t\"studentjon@example.com\", \n\t\t\"studenthon@example.com\",\n\t\t\"studentkon@example.com\"\n\t] \n}"
+				},
+				"url": {
+					"raw": "localhost:3001/api/register",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CommonStudent",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "localhost:3001/api/commonstudents?teacher=teacher@abc.com&teacher=teacherken@gmail.com",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"commonstudents"
+					],
+					"query": [
+						{
+							"key": "teacher",
+							"value": "teacher@abc.com"
+						},
+						{
+							"key": "teacher",
+							"value": "teacherken@gmail.com"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "SuspendStudent",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\"student\" : \"studentmary@gmail.com\"\n}\n"
+				},
+				"url": {
+					"raw": "localhost:3001/api/suspend",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"suspend"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "RetrieveNotification",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"teacher\": \"teacherken@example.com\",\n\t\"notification\": \"Hello students! @studentagnes@example.com @studentmiche@example.com\"\n}"
+				},
+				"url": {
+					"raw": "localhost:3001/api/retrievefornotifications",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"retrievefornotifications"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
